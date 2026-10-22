@@ -4,6 +4,7 @@
  */
 
 #include "loadbalancer.h"
+#include <stdexcept>
 
 int loadbalancer::getTime()
 {
@@ -27,16 +28,13 @@ void loadbalancer::addRequest(request r)
 request loadbalancer::getRequest()
 {
    incTime();
-   if (!requestQueue.empty()) 
-   {
-      request r = requestQueue.front(); // Queue
-      // request r = requestQueue.top(); // priority_queue, stack
-      requestQueue.pop();
-      return r;
-
+   if (requestQueue.empty()) {
+      throw std::out_of_range("Cannot get a request from an empty request queue");
    }
 
-   // ignore warning here about no return value
+   request r = requestQueue.top();
+   requestQueue.pop();
+   return r;
 }
 
 bool loadbalancer::isRequestQueueEmpty()
