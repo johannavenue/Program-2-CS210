@@ -1,6 +1,6 @@
 #include "request.h"
 #include "webserver.cpp"
-#include "loadbalancer.h"
+//#include "loadbalancer.h"
 
 #include <iostream>
 #include <ctime>
@@ -29,7 +29,7 @@ request createRandomRequest()
 int main()
 {
    // random number generator
-   srand(7);
+   srand(time(0);
 
 
    // create a loadbalancer
