@@ -3,7 +3,7 @@
  * Manage the CPU load by assigning next job to CPU with the least load
  */
 
-//#include "loadbalancer.h"
+#include "loadbalancer.h"
 #include <stdexcept>
 
 int loadbalancer::getTime()
