@@ -1,6 +1,6 @@
 #include "request.h"
 #include "webserver.cpp"
-//#include "loadbalancer.h"
+#include "loadbalancer.h"
 
 #include <iostream>
 #include <ctime>
