@@ -32,7 +32,7 @@ request loadbalancer::getRequest()
       throw std::out_of_range("Cannot get a request from an empty request queue");
    }
 
-   request r = requestQueue.top();
+   request r = requestQueue.front();
    requestQueue.pop();
    return r;
 }
